@@ -7,8 +7,3 @@
 "    '  `-.__.'
 "
 
-lua require("lspconfig")
-lua require('plugins')
-set number
-set relativenumber
-

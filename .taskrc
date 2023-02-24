@@ -1,0 +1,13 @@
+color=on
+color.main=darkgray
+color.active=green
+color.completed=white
+color.deleted=red
+color.recurring=magenta
+color.scheduled=blue
+color.urgency=yellow
+
+# Enable synchronization with Git
+git=on
+git.commit=on
+git.autopush=on

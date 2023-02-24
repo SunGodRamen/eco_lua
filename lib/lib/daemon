@@ -1,0 +1,70 @@
+Yes, you can set up a daemon for Hammerspoon to make it quicker to react to events. A daemon is a long-running background process that can run in the background even when you're not logged in to your Mac.
+
+To set up a daemon for Hammerspoon, you can use the launchd system provided by macOS. launchd is a system that manages daemons and other background processes on your Mac.
+
+Here's how you can set up a Hammerspoon daemon using launchd:
+
+Create a file named com.yourusername.hammerspoon.plist in the ~/Library/LaunchAgents/ directory. Replace yourusername with your Mac username.
+
+Open the com.yourusername.hammerspoon.plist file in a text editor and add the following XML code:
+
+xml
+Copy code
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+        "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>com.yourusername.hammerspoon</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>/usr/local/bin/hammerspoon</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+    </dict>
+</plist>
+This code sets up a launchd agent that runs the hammerspoon executable at login.
+
+Save the com.yourusername.hammerspoon.plist file and close the text editor.
+
+Open a Terminal window and run the following command to load the Hammerspoon daemon:
+
+javascript
+Copy code
+launchctl load ~/Library/LaunchAgents/com.yourusername.hammerspoon.plist
+This command loads the Hammerspoon daemon and starts running your Hammerspoon configuration in the background.
+
+From now on, Hammerspoon will automatically start up and run your configuration when you log in to your Mac. If you want to stop the daemon, you can run the following command:
+
+javascript
+Copy code
+launchctl unload ~/Library/LaunchAgents/com.yourusername.hammerspoon.plist
+This command unloads the Hammerspoon daemon and stops running your Hammerspoon configuration.
+
+
+
+
+Alex von Stuelpnagel
+lets add  this process to the init by including it as a script
+
+Sure! To add the launchd process for the Hammerspoon daemon to your init script, you can add the following lines to the end of your script:
+
+bash
+Copy code
+# Load the Hammerspoon daemon using launchd
+launchctl load ~/Library/LaunchAgents/com.yourusername.hammerspoon.plist
+Replace yourusername with your Mac username.
+
+This code loads the Hammerspoon daemon using launchd when your init script is run. The daemon will automatically start up and run your Hammerspoon configuration when you log in to your Mac.
+
+If you want to stop the daemon, you can run the following command:
+
+javascript
+Copy code
+launchctl unload ~/Library/LaunchAgents/com.yourusername.hammerspoon.plist
+This command unloads the Hammerspoon daemon and stops running your Hammerspoon configuration.
+
+
+

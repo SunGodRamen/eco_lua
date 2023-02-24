@@ -1,0 +1,9 @@
+
+
+
+# Close notifications with double Ctrl-F6
+ctrl - f6 : private.close_notifications
+ctrl - f6 : private.close_notifications | private.close_notifications
+
+
+

@@ -71,4 +71,26 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Set the history to unlimited
+HISTSIZE=-1
+SAVEHIST=-1
+
+# Update the color scheme
+ZSH_THEME="agnoster"
+export LS_COLORS="di=38;5;65:ln=38;5;11:so=38;5;196:pi=38;5;196:ex=38;5;10:bd=38;5;12:cd=38;5;14:su=38;5;9:sg=38;5;13:tw=38;5;10:ow=38;5;10:"
+
+# Prompt
+PROMPT='%{$fg_bold[green]%}%n %{$fg[cyan]%}%c $(git_prompt_info)%{$fg_bold[red]%}$ %{$reset_color%}'
+
+# Plugins
+plugins=(git zsh-autosuggestions)
+
+# Aliases
+alias ls='ls -G'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Path
+export PATH="/usr/local/bin:$PATH"
 
