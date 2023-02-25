@@ -74,4 +74,4 @@ end)
 
 -- Remap double-tapping 'k' to exit insert mode
 vim.api.nvim_set_keymap('i', 'k', '<ESC>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', 'kk', '<ESC>', { noremap = true, silent = true
+vim.api.nvim_set_keymap('i', 'kk', '<ESC>', { noremap = true, silent = true})

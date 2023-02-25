@@ -1,3 +1,5 @@
+local contextmenu = require("hs.contextmenu")
+
 -- Define a function to open the directory as tabs in nvim
 function openDirectoryInNvim(directory)
   local command = "nvim --cmd 'silent NvimTreeToggle' --cmd 'silent NvimTreeFind " .. directory .. "'"
